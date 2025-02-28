@@ -1,20 +1,24 @@
 import { Tabs } from 'expo-router'
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 import {Ionicons, Feather, Fontisto} from '@expo/vector-icons'
 
 function Rootlayout() {
 
-  // const Home = () => (
-  //     <View style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
-  //        <Feather name="home" size={24} color="black" />
-  //        <Text>Home</Text>
-  //     </View>
-  // )
-
+  
 
   return (
-    <Tabs screenOptions={{ tabBarInactiveBackgroundColor: 'black', tabBarActiveBackgroundColor: 'black', tabBarInactiveTintColor: 'gray', tabBarActiveTintColor: 'white' ,}}>
+    <Tabs screenOptions={{ tabBarInactiveTintColor: 'gray', tabBarActiveTintColor: 'white', tabBarStyle: {
+      ...Platform.select({
+        ios: {
+          height: 150,
+          position: "absolute",
+          bottom: -60,
+          paddingTop: 4
+        }
+      }),
+      backgroundColor: 'black'
+    }}}>
        <Tabs.Screen
         name="screens/Home"
         options={{

@@ -5,17 +5,19 @@ import { router } from 'expo-router'
 
 interface back {
     ClassName: any,
-    text: boolean
+    text: boolean,
+    Color: string,
+    Size: number
 }
 
 const CustomBackButton = (Back: back) => {
    
   return (
-        <TouchableOpacity className={Back.ClassName} onPress={() => router.back()}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+        <TouchableOpacity className={`${Back.ClassName} ${Back.text == true && 'flex flex-row items-center gap-2'}`} onPress={() => router.back()}>
+            <MaterialIcons name="arrow-back-ios" size={Back.Size} color={Back.Color} />
             {
                 Back.text == true && (
-                    <Text>Back</Text>
+                    <Text className='text-white'>Back</Text>
                 )
             }
     </TouchableOpacity>

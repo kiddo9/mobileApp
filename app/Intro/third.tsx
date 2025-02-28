@@ -18,12 +18,18 @@ const third = () => {
     <View className=''>
       <ImageCard image={require('../../assets/images/Hiking.png')} Style='mx-auto' />
     </View>
-    <View className='bg-white h-[450px] absolute right-0 left-0 bottom-0 rounded-t-[100px] roun'>
+    <View className='bg-white h-[450px] absolute right-0 left-0 bottom-0 rounded-t-[4rem]'>
       <View className='mx-auto mt-12 w-80 h-96'>
-        <Texts text='Explore Local Attractions' Style='text-center text-4xl font-bold' />
+        <Texts text='Explore Local Attractions' Style='text-center text-3xl font-bold' />
         <Texts text='Explore Local Attractions
-Discover the beauty of local places you may never have visited. Experience local life and enjoy authentic experiences in each destination.' Style='text-center text-lg mt-7 px-3' />
+Discover the beauty of local places you may never have visited. Experience local life and enjoy authentic experiences in each destination.' Style='text-center text-lg mt-7 px-1' />
         <Button title="Finish" handles={Next} extrastyling='bg-[#1E1E1E] p-6 rounded-full mt-10' textstyling='text-white text-center font-bold' />
+      </View>
+
+      <View className='flex flex-row justify-center gap-6 mt-5'>
+        <View className='h-4 w-4 bg-slate-400 rounded-full'></View>
+        <View className='h-4 w-4 bg-slate-400 rounded-full'></View>
+        <View className='h-4 w-4 bg-blue-400 rounded-full'></View>
       </View>
     </View>
   </SafeAreaView>

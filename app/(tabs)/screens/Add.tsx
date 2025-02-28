@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, TextInput, TouchableOpacity, Platform } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,74 +7,9 @@ import Texts from '../../../components/Text'
 import ImageCard from '../../../components/ImageCard'
 import api from '../../../API/api';
 import axios from 'axios';
+import CustomBackButton from '../../../components/customBackButton';
 
 function Add() {
-
-  const Users = [
-    {
-      id: 1,
-      image: require('../../../assets/images/Ellipse 224.png'),
-      name: 'Valentine',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '9',
-      read: true
-    },
-    {
-      id: 2,
-      image: require('../../../assets/images/Ellipse 221.png'),
-      name: 'Kboy',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '4',
-      read: true
-    },
-    {
-      id: 3,
-      image: require('../../../assets/images/Ellipse 223.png'),
-      name: 'Kerian',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '6',
-      read: true
-    },
-    {
-      id: 4,
-      image: require('../../../assets/images/Ellipse 222.png'),
-      name: 'Preye',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '12',
-      read: true
-    },
-    {
-      id: 5,
-      image: require('../../../assets/images/Ellipse 224.png'),
-      name: 'Gare',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '1',
-      read: true
-    },
-    {
-      id: 6,
-      image: require('../../../assets/images/Ellipse 221.png'),
-      name: 'Femi',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '10',
-      read: true
-    },
-    {
-      id: 7,
-      image: require('../../../assets/images/Ellipse 223.png'),
-      name: 'Me',
-      statue: 'ok',
-      message: 'How are you',
-      unread: '7',
-      read: true
-    },
-  ]
 
   const [user, setUser] = useState([]);
   const ImG = require('../../../assets/images/Ellipse 223.png');
@@ -104,6 +39,7 @@ function Add() {
   return (
     <View className='h-full bg-[#1A8EEA]'>
       <SafeAreaView>
+      <CustomBackButton Color='white' ClassName={`text-white ${Platform.OS == 'ios' ? 'mt-1' : 'mt-10'} mx-4 py-3 px-3`} Size={20} text={true} />
         <ScrollView contentContainerStyle={{ paddingBottom: 300 }} className=' bg-white h-full mt-28  rounded-t-[50px] px-7 py-7'>
 
         <View className='mt-4'>
